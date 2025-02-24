@@ -1,0 +1,28 @@
+<mat-toolbar color="secondary">
+  <img src="cardiogram.svg" alt="Logo" width="30" style="margin-right: 20px;" />
+  <H3 class="title" href="/">MEDALERT</H3>
+
+  <div class="toolbar-spacer"></div>
+
+  @if (!loginDisplay) {
+    <button mat-raised-button [routerLink]="['dashboard']">Iniciar Sesión</button>
+  }
+
+  <!-- @if (!loginDisplay) {
+  <button mat-raised-button [matMenuTriggerFor]="loginMenu">Iniciar Sesión</button>
+  }
+  <mat-menu #loginMenu="matMenu">
+    <button mat-menu-item (click)="loginPopup()">Login usando Popup</button>
+  </mat-menu> -->
+
+  @if (loginDisplay) {
+  <button mat-raised-button (click)="logout(true)">Cerrar Sesión</button>
+  }
+
+</mat-toolbar>
+<div class="container">
+  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  @if (!isIframe) {
+  <router-outlet></router-outlet>
+  }
+</div>

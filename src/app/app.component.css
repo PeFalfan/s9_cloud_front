@@ -1,0 +1,12 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: #283db2;
+    color:aliceblue;
+}
+
+a.title {
+    color: white;
+}

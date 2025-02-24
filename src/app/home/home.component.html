@@ -1,0 +1,79 @@
+@if (!loginDisplay) {
+  <div class="home-container">
+    <div class="welcome-card">
+        <img src="welcome.jpg" alt="Bienvenido a MedAlert">
+        <h1>Bienvenido a MedAlert</h1>
+        <p>Monitorea signos vitales y recibe alertas en tiempo real.</p>
+        <button mat-raised-button color="primary" [routerLink]="['dashboard']">Iniciar Sesión</button>
+    </div>
+</div>
+}
+
+@if (loginDisplay) {
+  <div class="welcome-card">
+    <img src="welcome.jpg" alt="Bienvenido a MedAlert">
+    <h1>Bienvenido a MedAlert</h1>
+    <p>Monitorea signos vitales y recibe alertas en tiempo real.</p>
+    <button mat-raised-button color="primary" [routerLink]="['dashboard']">Ir a Dashboard</button>
+</div>
+}
+<style>
+/* Estilo general para centrar el contenido */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Contenedor principal */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Tarjeta de bienvenida */
+.welcome-card {
+    background: #fff;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de bienvenida */
+.welcome-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Botón de ingreso */
+.btn {
+    display: inline-block;
+    background-color: #1976D2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #1259a7;
+}
+
+mat-toolbar {
+    background-color: #283db2;
+    color:aliceblue;
+}
+
+</style>

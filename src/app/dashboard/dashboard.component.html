@@ -1,0 +1,58 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">Dashboard de Pacientes Críticos <button mat-raised-button (click)="llamarBackend()">Refrescar</button></header>
+  <table class="patient-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Alertas</th>
+        <th>Frecuencia Cardiaca</th>
+        <th>Presión Arterial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of pacientes">
+        <td>{{ paciente.id }}</td>
+        <td>{{ paciente.name }}</td>
+        <td>
+          <span class="alert-icon" *ngIf="paciente.alert">⚠️</span>
+          {{ paciente.alert }}
+        </td>
+        <td>{{ paciente.fc }}</td>
+        <td>{{ paciente.pa1 }}/{{ paciente.pa2 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .dashboard-container {
+  padding: 20px;
+}
+.dashboard-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.patient-table th, .patient-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.patient-table th {
+  background-color: #f2f2f2;
+}
+.alert-icon {
+  color: red;
+  font-size: 18px;
+}
+
+mat-toolbar {
+    background-color: #283db2;
+    color:aliceblue;
+}
+</style>
